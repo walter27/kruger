@@ -101,7 +101,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\":4,\r\n    \"name\": \"Sputnik\",\r\n    \"date\": \"2022-12-06T09:01:16-05:00\",\r\n    \"doses\": 1,\r\n    \"employee\": {\r\n        \"cedula\": \"0302403084\",\r\n        \"names\": \"Walter\",\r\n        \"lastNames\": \"Remache\",\r\n        \"email\": \"walter5@gmail.com\",\r\n        \"birthDate\": \"1995-03-27T09:01:16-05:00\",\r\n        \"address\": \"Azogues\",\r\n        \"telephone\": \"0992558231\",\r\n        \"stateVaccination\": true\r\n    }\r\n}",
+					"raw": "{\r\n    \"name\": \"Sputnik\",\r\n    \"date\": \"2022-12-06T09:01:16-05:00\",\r\n    \"doses\": 1,\r\n    \"employee\": { \r\n        \"id\":1,\r\n        \"cedula\": \"0302403084\",\r\n        \"names\": \"Walter\",\r\n        \"lastNames\": \"Remache\",\r\n        \"email\": \"walter5@gmail.com\",\r\n        \"birthDate\": \"1995-03-27T09:01:16-05:00\",\r\n        \"address\": \"Azogues\",\r\n        \"telephone\": \"0992558231\",\r\n        \"stateVaccination\": true\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
