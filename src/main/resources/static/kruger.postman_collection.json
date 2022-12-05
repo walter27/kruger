@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "9d75890f-b5d7-47f2-8f15-e5802a720917",
+		"name": "kruger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12310484"
+	},
+	"item": [
+		{
+			"name": "add employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cedula\":\"0302403084\",\r\n    \"names\":\"Maria\",\r\n    \"lastNames\":\"Perez\",\r\n    \"email\":\"maria@gmail.com\",\r\n    \"birthDate\":\"\",\r\n    \"address\":\"\",\r\n    \"telephone\":\"\",\r\n    \"stateVaccination\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzAyNjA5NTMsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiIxODY4M2RiNC0yNDZhLTQ4M2MtOTE5ZC1iMjQ5M2Q1MjczMGQiLCJjbGllbnRfaWQiOiJrcnVnZXIiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.eLzADMgzztK27e9ewT4ldj7lkLY3WjUOEGdEolOKvLY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":4,\r\n    \"cedula\":\"0302403084\",\r\n    \"names\":\"Maria\",\r\n    \"lastNames\":\"Perez\",\r\n    \"email\":\"maria@gmail.com\",\r\n    \"birthDate\":\"\",\r\n    \"address\":\"\",\r\n    \"telephone\":\"\",\r\n    \"stateVaccination\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add Vaccine",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":4,\r\n    \"name\": \"Sputnik\",\r\n    \"date\": \"2022-12-06T09:01:16-05:00\",\r\n    \"doses\": 1,\r\n    \"employee\": {\r\n        \"cedula\": \"0302403084\",\r\n        \"names\": \"Walter\",\r\n        \"lastNames\": \"Remache\",\r\n        \"email\": \"walter5@gmail.com\",\r\n        \"birthDate\": \"1995-03-27T09:01:16-05:00\",\r\n        \"address\": \"Azogues\",\r\n        \"telephone\": \"0992558231\",\r\n        \"stateVaccination\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vaccine/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vaccine",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list employes by name vaccine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/list/vaccine?name=Pfizer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"list",
+						"vaccine"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Pfizer"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list employes vacuned by dates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/list/vaccine/date?startDate=2022-12-01&endDate=2022-12-06",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"list",
+						"vaccine",
+						"date"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2022-12-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2022-12-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list employes vacuned by state",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/list/vaccine/state?state=false",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"list",
+						"vaccine",
+						"state"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "kruger",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "rzw",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzAyNjg3NTIsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiI0NTk5OWI5NC05OTQ4LTRlMzItYTI2Ny1hNDVjZTJiNzA2NTciLCJjbGllbnRfaWQiOiJrcnVnZXIiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0._hTuTvY8aMlQP0l7FKbMRnNHZrnHLuH16Mgyst0Ltfs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idEmployee\":7,\r\n    \"username\":\"jpe\",\r\n    \"password\":\"12345\",\r\n    \"idRole\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
